@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TIC-TAC-TOE – X or O</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================
+         ANIMATED BACKGROUND
+    =========================== -->
+
+    <div class="background">
+
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+        <div class="blob blob4"></div>
+
+        <div id="particles"></div>
+
+    </div>
+
+    <!-- ==========================
+         PAGE 1
+         SYMBOL SELECTION
+    =========================== -->
+
+    <section
+        id="selectionPage"
+        class="page active"
+    >
+
+        <div class="glass-card selection-card">
+
+            <h1 class="main-title">
+                TIC-TAC-TOE
+            </h1>
+
+            <p class="subtitle">
+                Choose Your Symbol
+            </p>
+
+            <div class="symbol-container">
+
+                <button
+                    id="chooseX"
+                    class="symbol-btn x-btn"
+                >
+                    Play As X
+                </button>
+
+                <button
+                    id="chooseO"
+                    class="symbol-btn o-btn"
+                >
+                    Play As O
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         PAGE 2
+         GAME PAGE
+    =========================== -->
+
+    <section
+        id="gamePage"
+        class="page"
+    >
+
+        <!-- Back Button -->
+
+        <button
+            id="backBtn"
+            class="back-btn"
+        >
+            ← Back
+        </button>
+
+        <!-- Header -->
+
+        <div class="glass-card game-header">
+
+            <div class="symbol-info">
+
+                <h3>
+                    Player:
+                    <span id="playerSymbol">
+                        X
+                    </span>
+                </h3>
+
+            </div>
+
+            <div class="symbol-info">
+
+                <h3>
+                    Computer:
+                    <span id="computerSymbol">
+                        O
+                    </span>
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- Scoreboard -->
+
+        <div class="scoreboard">
+
+            <div class="glass-card score-card">
+
+                <h4>Player</h4>
+
+                <span
+                    id="playerScore"
+                    class="score-number"
+                >
+                    0
+                </span>
+
+            </div>
+
+            <div class="glass-card score-card">
+
+                <h4>Draws</h4>
+
+                <span
+                    id="drawScore"
+                    class="score-number"
+                >
+                    0
+                </span>
+
+            </div>
+
+            <div class="glass-card score-card">
+
+                <h4>Computer</h4>
+
+                <span
+                    id="computerScore"
+                    class="score-number"
+                >
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Board -->
+
+        <div class="board-wrapper">
+
+            <div
+                id="gameBoard"
+                class="game-board"
+            >
+
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <button
+                id="resetBoardBtn"
+                class="control-btn"
+            >
+                Reset Board
+            </button>
+
+            <button
+                id="restartMatchBtn"
+                class="control-btn"
+            >
+                Restart Match
+            </button>
+
+            <button
+                id="changeSymbolBtn"
+                class="control-btn"
+            >
+                Change Symbol
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         RESULT MODAL
+    =========================== -->
+
+    <div
+        id="resultModal"
+        class="modal"
+    >
+
+        <div class="modal-overlay"></div>
+
+        <div class="glass-card modal-content">
+
+            <div
+                id="confettiContainer"
+                class="confetti-container"
+            ></div>
+
+            <h1 id="modalTitle">
+                YOU WON!
+            </h1>
+
+            <p id="modalMessage">
+                Congratulations Champion!
+            </p>
+
+            <div class="modal-buttons">
+
+                <button
+                    id="playAgainBtn"
+                    class="modal-btn"
+                >
+                    Play Again
+                </button>
+
+                <button
+                    id="modalChangeSymbolBtn"
+                    class="modal-btn"
+                >
+                    Change Symbol
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+         AUDIO
+    =========================== -->
+
+    <audio id="clickAudio"></audio>
+    <audio id="winAudio"></audio>
+    <audio id="loseAudio"></audio>
+    <audio id="drawAudio"></audio>
+
+    <!-- ==========================
+         SCRIPT
+    =========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
